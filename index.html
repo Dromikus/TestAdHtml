@@ -12,12 +12,20 @@
 
     <div style="background-color: rgb(192, 192, 192); height: 100px; width: 500px;"></div>
 
-    <div id="admob-banner"></div>
+    <div id="admob-banner" style="height: 50px; width: 320px; background-color: blue;"></div>
 
     <h1>
         Test Admob Banner
      </h1>
 
      <div style="background-color: gray; height: 200px; width: 500px;"></div>
+
+     <script>
+        var element = document.getElementById("admob-banner");
+        element.addEventListener('click', function (event) {
+            var rect = element.getBoundingClientRect();
+            AndroidFunction.showMenu(rect.left, rect.top, rect.width, rect.height);
+        });
+    </script>
 </body>
 </html>
